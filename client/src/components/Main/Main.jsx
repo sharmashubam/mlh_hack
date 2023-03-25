@@ -1,11 +1,13 @@
-import React from 'react'
-import Products from '../Products/Products'
+import React from "react";
+import Product from "../Products/Product";
 function Main() {
   return (
-    <div className='w-3/4 mr-12'>
-        <Products />
+    <div className="grid grid-cols-2 gap-10">
+      <Product />
+      <Product />
+      <Product />
     </div>
-  )
+  );
 }
 
-export default Main
+export default Main;
