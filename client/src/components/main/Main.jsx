@@ -1,5 +1,5 @@
 import React from "react";
-import Product from "../Products/Product";
+import Product from "../products/Product";
 function Main() {
   return (
     <div className="grid grid-cols-2 gap-10">
