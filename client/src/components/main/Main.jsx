@@ -1,4 +1,3 @@
-import "./main.css"
 import Product from "../products/Product";
 function Main() {
   return (
