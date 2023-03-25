@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SignUp from "../components/signup/SignUp";
 import Login from "../components/login/Login";
 import HomePage from "../components/HomePage/HomePage";
+import Up_loadingform from "../components/form/UP_loadingform";
 
 const RouterComponent = () => {
   const loggedIn = false;
@@ -16,6 +17,7 @@ const RouterComponent = () => {
           </>
         )}
         <Route path="/" element={<HomePage />} />
+        <Route path="/upload-form" element={<Up_loadingform />} />
       </Routes>
     </Router>
   );
