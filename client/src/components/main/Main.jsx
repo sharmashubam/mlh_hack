@@ -1,4 +1,3 @@
-import React from "react";
 import Product from "../products/Product";
 function Main() {
   return (
