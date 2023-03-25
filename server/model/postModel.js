@@ -1,16 +1,17 @@
 const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema({
+  seller:{String},
   title: String,
   message: String,
-  creator: {
-    type: String,
-    required: true,
-  },
   selectedFile: String,
   createdAt: {
     type: Date,
     default: new Date(),
+  },
+  price: {
+    type: String,
+    required: true,
   },
   user: { type: String, default: true },
 });

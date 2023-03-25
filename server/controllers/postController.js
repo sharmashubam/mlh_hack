@@ -16,7 +16,7 @@ const getPost = async (req, res) => {
 const createPost = async (req, res) => {
   try {
     const { seller, title, message, price, selectedFile, user } = req.body;
-    if (!seller || !user) {
+    if (!seller || !user || !price || !selectedFile) {
       return res.status(400).json({ message: "Enter all credentials" });
     }
     const newPost = new postModel({
@@ -60,7 +60,7 @@ const deletePost = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(_id)) {
       return res.status(404).json({ message: "Invalid Id for Post" });
     }
-    
+
     await postModel.findByIdAndRemove(_id);
 
     res.json({ message: "Post deleted successfully" });
