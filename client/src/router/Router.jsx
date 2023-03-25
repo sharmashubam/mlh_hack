@@ -17,7 +17,7 @@ const RouterComponent = () => {
           </>
         )}
         <Route path="/" element={<HomePage />} />
-        <Route path="/upload-form" element={<Up_loadingform />} />
+        <Route path="/sell-item" element={<Up_loadingform />} />
       </Routes>
     </Router>
   );
