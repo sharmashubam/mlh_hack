@@ -1,6 +1,5 @@
-import HomePage from "./components/HomePage/HomePage";
-import Main from "./components/Main/Main";
-import Profile from "./components/Profile/Profile";
+import HomePage from "./components/homePage/HomePage";
+
 function App() {
   return (
     <div>

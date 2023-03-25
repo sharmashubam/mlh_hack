@@ -1,8 +1,8 @@
 import React from 'react'
-import Navbar from '../Navbar/Navbar'
-import Main from '../Main/Main'
-import Profile from '../Profile/Profile'
-import Footer from '../Footer/Footer'
+import Navbar from '../navbar/Navbar'
+import Main from '../main/Main'
+import Profile from '../profile/Profile'
+import Footer from '../footer/Footer'
 function HomePage() {
   return (
     <div className='h-full'>

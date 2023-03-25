@@ -1,22 +1,20 @@
-import React from 'react'
+import React from 'react';
 
 function Footer() {
   return (
-    <div className="bg-black py-20">
-    <div className="w-[95%] md:w-[85%] mx-auto">
-        <h2 className="text-white text-3xl font-bold pb-6 md:pb-0 text-center md:text-center">
+    <div className='fixed bottom-0 left-0 w-full bg-black py-6'>
+      <div className='w-11/12 md:w-9/12 mx-auto flex flex-col md:flex-row justify-between items-center'>
+        <h2 className='text-white text-3xl font-bold pb-6 md:pb-0 text-center md:text-left'>
           name
         </h2>
-      <div className='md:ml-72'>
-        <p className="ml-10 text-white text-center md:text-left text-lg font-semibold">
-          Copyright 2023. All Rights Reserved
+        <p className='text-white text-center md:text-left text-lg font-semibold'>
+          Copyright 2023.
+          <br className='md:hidden' />
+          All Rights Reserved
         </p>
       </div>
     </div>
-  </div>
-  )
+  );
 }
-  
 
-
-export default Footer
+export default Footer;
