@@ -1,5 +1,3 @@
-
-
 function Navbar() {
   return (
     <div className='flex border-2 border-black px-7 py-2 justify-between items-center'>
