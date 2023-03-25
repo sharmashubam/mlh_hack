@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const connectDB = require("./config/connectDB");
 //connection url
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 7000;
 
 const app = express();
 
