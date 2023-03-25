@@ -3,7 +3,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 function Profile() {
   return (
-    <div className='relative border-2 border-gray-300 rounded-lg shadow-lg w-1/4'>
+    <div className='relative border-2 border-gray-300 rounded-lg shadow-lg w-1/4 max-h-[45vh]'>
       <div className='m-auto p-5'>
         <div className='flex justify-center'>
           <AccountCircleIcon style={{ fontSize: 80 }} className='text-gray-500' />
