@@ -5,8 +5,8 @@ function Login() {
           <h1 className="font-medium text-2xl mt-3 text-center">Login</h1>
           <form action="" className="mt-6">
             <div className="my-5 text-sm">
-              <label htmlFor="username" className="block text-black">Username</label>
-              <input type="text" autoFocus id="username" className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full" placeholder="Username" />
+              <label htmlFor="username" className="block text-black">Email</label>
+              <input type="text" autoFocus id="Email" className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full" placeholder="Email" />
             </div>
             <div className="my-5 text-sm">
               <label htmlFor="password" className="block text-black">Password</label>
