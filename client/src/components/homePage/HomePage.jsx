@@ -4,7 +4,6 @@ import Profile from "../profile/Profile";
 import Footer from "../footer/Footer";
 import Up_loadingform from "../form/UP_loadingform";
 import { MyContextProvider } from "../../contexts/MyContextProvider";
-import Profile from '../profile/Profile'
 
 function HomePage() {
   return (
