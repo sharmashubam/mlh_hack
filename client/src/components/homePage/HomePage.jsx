@@ -2,8 +2,6 @@ import Navbar from '../navbar/Navbar'
 import Main from '../main/Main'
 import Profile from '../profile/Profile'
 import Footer from '../footer/Footer'
-import Up_loadingform from '../form/UP_loadingform'
-
 
 function HomePage() {
   return (
