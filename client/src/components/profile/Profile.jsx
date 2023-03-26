@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useContext } from "react"
+import { MyContext } from "../../contexts/MyContextProvider"
 function Profile() {
+  const {clickonprofile} = useContext(MyContext)
+  console.log(clickonprofile)
   return (
-    <div className="fixed left-[40%] top-[8%] border-2 border-gray-300 rounded-lg shadow-lg w-[30%] ml-[30%] max-h-[45vh]">
+    <div className={`bg-white fixed top-[9%] right-0 border-2 border-gray-300 rounded-lg shadow-lg w-1/4 transition-transform ease-in-out duration-300 transform ${clickonprofile ? "translate-x-0": "translate-x-full"} `}>
       <div className="m-auto p-5">
         <div className="flex justify-center">
           <img src="./profile.png" alt="" srcset="" />
