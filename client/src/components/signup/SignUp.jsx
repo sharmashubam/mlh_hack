@@ -1,27 +1,24 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 
 function SignUp() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [verifyPassword, setVerifyPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [verifyPassword, setVerifyPassword] = useState("");
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      const response = await axios.post('/signup', {
-        email: email,
-        password: password,
-        verifyPassword: verifyPassword
+      await axios.post("http://localhost:5000/auth/", {
+        email,
+        password,
+        passwordVerify: verifyPassword,
       });
-      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
   };
-console.log(email)
-console.log(password)
-console.log(verifyPassword)
+
   return (
     <div className="bg-white lg:w-4/12 md:6/12 w-10/12 m-auto my-10 shadow-md">
       <div className="py-8 px-8 rounded-xl">
@@ -68,7 +65,10 @@ console.log(verifyPassword)
             />
           </div>
 
-          <button className="block text-center text-white bg-gray-800 p-3 duration-300 rounded-sm hover:bg-black w-full" type="submit">
+          <button
+            className="block text-center text-white bg-gray-800 p-3 duration-300 rounded-sm hover:bg-black w-full"
+            type="submit"
+          >
             SignUp
           </button>
         </form>
