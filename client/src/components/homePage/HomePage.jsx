@@ -10,7 +10,7 @@ function HomePage() {
     <MyContextProvider>
       <div className="h-full ">
         <Navbar />
-        <div className="grid grid-cols-2 gap-5">
+        <div>
           <Main />
           <Profile />
         </div>
