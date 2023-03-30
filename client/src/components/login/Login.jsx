@@ -1,18 +1,26 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useContext, useState } from "react";
+import axios from "axios";
+import { MyContext } from "../../contexts/MyContextProvider";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const { getLoggeIn } = useContext(MyContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = { email, password };
     try {
-      const response = await axios.post('/api/login', data);
-      console.log(response.data);
-    } catch (error) {
-      console.log(error);
+      const loginData = {
+        email,
+        password,
+      };
+      await axios.post("http://localhost:5000/auth/login", loginData);
+      await getLoggeIn();
+      navigate("/");
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -57,7 +65,7 @@ function Login() {
           </button>
         </form>
         <p className="mt-12 text-xs text-center font-light text-gray-400">
-          Don't have an account?{' '}
+          Don't have an account?
           <a href="#" className="text-black font-medium">
             Create One
           </a>

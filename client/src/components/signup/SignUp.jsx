@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useContext } from "react";
+import { MyContext } from "../../contexts/MyContextProvider";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [verifyPassword, setVerifyPassword] = useState("");
-
+  const { getLoggeIn } = useContext(MyContext);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -14,6 +18,8 @@ function SignUp() {
         password,
         passwordVerify: verifyPassword,
       });
+      await getLoggeIn();
+      navigate("/");
     } catch (error) {
       console.log(error);
     }

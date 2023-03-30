@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema({
-  seller:{String},
+  seller: { String },
   title: String,
   message: String,
   selectedFile: String,

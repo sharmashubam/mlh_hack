@@ -7,5 +7,5 @@ router.get("/", postController.getPost);
 
 router.post("/", auth, postController.createPost);
 router.patch("/:id", postController.updatePost);
-router.delete('/:id',postController.deletePost);
+router.delete("/:id", postController.deletePost);
 module.exports = router;

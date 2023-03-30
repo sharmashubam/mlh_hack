@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SignUp from "../components/signup/SignUp";
 import Login from "../components/login/Login";
 import HomePage from "../components/homePage/HomePage";
-import Up_loadingform from "../components/form/UP_loadingform";
-
+import { MyContext } from "../contexts/MyContextProvider";
+import SellForm from "../components/form/SellForm";
 const RouterComponent = () => {
-  const loggedIn = false;
+  const { loggedIn } = useContext(MyContext);
   return (
     <Router>
       <Routes>
@@ -17,7 +17,7 @@ const RouterComponent = () => {
           </>
         )}
         <Route path="/" element={<HomePage />} />
-        <Route path="/sell-item" element={<Up_loadingform />} />
+        <Route path="/sell-item" element={<SellForm />} />
       </Routes>
     </Router>
   );
