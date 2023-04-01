@@ -27,7 +27,6 @@ router.post("/", async (req, res) => {
     }
 
     const existingUser = await userModel.findOne({ email });
-    console.log(existingUser);
     if (existingUser) {
       return res.status(401).json({ message: "User already exists" });
     }
@@ -71,6 +70,7 @@ router.post("/", async (req, res) => {
 });
 
 // log in
+
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -146,14 +146,14 @@ router.get("/loggedIn", async (req, res) => {
     if (!token) return res.json(false);
 
     // if token is not verified it will throw error and we will catch it ans send just like we did it
-    const decoded= jwt.verify(token, process.env.ACCESS_SECRET_KEY);
+    const decoded = jwt.verify(token, process.env.ACCESS_SECRET_KEY);
 
     res.json(decoded);
+    console.log("loggedIN successfully");
   } catch (err) {
     res.json(false);
+    console.log("LoggedIn unsuccessfull");
   }
 });
-
-
 
 module.exports = router;

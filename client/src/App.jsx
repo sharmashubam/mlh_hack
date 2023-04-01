@@ -1,26 +1,22 @@
-import React,{useState} from "react";
+import axios from "axios";
+import React from "react";
 import HomePage from "./components/homePage/HomePage";
-import Login from "./components/login/Login";
-import SignUp from "./components/signup/SignUp";
+import { MyContextProvider } from "./contexts/MyContextProvider";
 import Router from "./router/Router";
-import { MyContext } from "./contexts/MyContextProvider";
-function App() {
-  const [clickonprofile, setClickonprofile] = useState(false);
 
-  const clickprofile = (e) => {
-    if (clickonprofile == true) {
-      setClickonprofile(false);
-    } else {
-      setClickonprofile(true);
-    }
-  };
+
+axios.defaults.withCredentials = true;
+
+
+function App() {
+  
   return (
     <div>
-      <MyContext.Provider value={{clickonprofile, clickprofile}}>
+      <MyContextProvider>
         <Router>
           <HomePage />
         </Router>
-      </MyContext.Provider>
+      </MyContextProvider>
     </div>
   );
 }

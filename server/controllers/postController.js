@@ -15,7 +15,7 @@ const getPost = async (req, res) => {
 
 const createPost = async (req, res) => {
   try {
-    const { seller, title, message, price, selectedFile, user } = req.body;
+    const { seller, title, message, selectedFile, price, user } = req.body;
     if (!seller || !user || !price || !selectedFile) {
       return res.status(400).json({ message: "Enter all credentials" });
     }
@@ -47,7 +47,6 @@ const updatePost = async (req, res) => {
     });
 
     res.json(updatePost);
-
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
