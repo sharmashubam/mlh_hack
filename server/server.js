@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const connectDB = require("./config/connectDB");
 //connection url
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 7000;
 
 const app = express();
 
@@ -17,6 +17,8 @@ app.use(
       "http://127.0.0.1:5500",
       "http://localhost:5000",
       "http://localhost:3000",
+      "http://localhost:7000",
+
     ],
     credentials: true,
   })

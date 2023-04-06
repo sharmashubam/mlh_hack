@@ -13,7 +13,7 @@ function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/auth/", {
+      await axios.post("http://localhost:7000/auth/", {
         email,
         password,
         passwordVerify: verifyPassword,
@@ -26,7 +26,8 @@ function SignUp() {
   };
 
   return (
-    <div className="bg-white lg:w-4/12 md:6/12 w-10/12 m-auto my-10 shadow-md">
+    <div className="bg-[url('./bg1.png')] h-[700px]   w-[68%] ml-[15%] rounded-md">
+    <div className="bg-white lg:w-4/12 md:6/12 w-10/12 m-auto my-10 shadow-md relative top-[10%] left-[10%]">
       <div className="py-8 px-8 rounded-xl">
         <h1 className="font-medium text-2xl mt-3 text-center">SignUp</h1>
         <form action="" className="mt-6" onSubmit={handleSubmit}>
@@ -71,20 +72,21 @@ function SignUp() {
             />
           </div>
 
-          <button
+          <a href="/home"
             className="block text-center text-white bg-gray-800 p-3 duration-300 rounded-sm hover:bg-black w-full"
             type="submit"
           >
             SignUp
-          </button>
+          </a>
         </form>
         <p className="mt-12 text-xs text-center font-light text-gray-400">
           Have an account?
-          <a href="#" className="text-black font-medium">
+          <a href="/login" className="text-black font-medium">
             Login
           </a>
         </p>
       </div>
+    </div>
     </div>
   );
 }
