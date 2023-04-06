@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { useNavigate,Link } from "react-router-dom";
 import { MyContext } from "../../contexts/MyContextProvider";
 import Navbar from "../navbar/Navbar";
+import Footer from "../footer/Footer";
 import FileBase from "react-file-base64";
 const SellForm = () => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const SellForm = () => {
   return (
     <div className="   bg-slate-100  overflow-x-hidden">
       <Navbar/>
-      <div className="mt-[5%]   bg-[url('./img.png')] bg-no-repeat">
+      <div className="mt-[5%]   bg-[url('./img.png')] bg-no-repeat mb-[5%]">
       <h1 className="text-3xl font-bold mb-6 text-center text-book ml-[20%] w-[60%] text-amber-900 ">
         Sell Item
       </h1>
@@ -120,7 +121,9 @@ const SellForm = () => {
           </Link>   
         </div>
       </form>
+     
     </div>
+    <Footer />
     </div>
   );
 };
