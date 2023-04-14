@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import { MyContext } from "../../contexts/MyContextProvider";
+import Navbar from "../navbar/Navbar";
+import Footer from "../footer/Footer";
 import FileBase from "react-file-base64";
 const SellForm = () => {
   const navigate = useNavigate();
@@ -21,15 +23,17 @@ const SellForm = () => {
 
 
   return (
-    <div className="container mx-[10%] my-10">
-      <h1 className="text-3xl font-bold mb-6 text-center text-book w-[60%] text-amber-900">
+    <div className="   bg-slate-100  overflow-x-hidden">
+      <Navbar/>
+      <div className="mt-[5%]   bg-[url('./img.png')] bg-no-repeat mb-[5%]">
+      <h1 className="text-3xl font-bold mb-6 text-center text-book ml-[20%] w-[60%] text-amber-900 ">
         Sell Item
       </h1>
       <form
         onSubmit={submitHandler}
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-[60%]"
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-[50%] ml-[30%]"
       >
-        <div className="mb-4">
+        <div className="mb-4 ">
           <label className="block text-gray-700 font-bold mb-2 hover:text-blue-800">
             Item Name
           </label>
@@ -101,20 +105,25 @@ const SellForm = () => {
               />
         </div>
         <div className="flex items-center justify-between">
-          <button
+        <Link to='/home'>  <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300"
             type="submit"
           >
             Submit
-          </button>
-          <button
+          </button></Link>   
+       <Link to='/home'>
+       <button
             className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300"
             type="button"
           >
             Cancel
           </button>
+          </Link>   
         </div>
       </form>
+     
+    </div>
+    <Footer />
     </div>
   );
 };

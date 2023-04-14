@@ -1,7 +1,7 @@
 
 import axios, { all } from "axios";
 import React, { createContext, useEffect, useState } from "react";
-
+import Product from "../components/products/Product";
 export const MyContext = createContext();
 
 // Step 2: Create a new component that will serve as the context provider
@@ -17,9 +17,10 @@ export const MyContextProvider = ({ children }) => {
     price: "",
     user: "",
   });
-
+  
+ 
   const getData = async () => {
-    const postResult = await axios.get("http://localhost:5000/posts");
+    const postResult = await axios.get("http://localhost:7000/posts");
     setAllData(postResult.data);
   };
 
@@ -33,7 +34,7 @@ export const MyContextProvider = ({ children }) => {
 
   const getLoggeIn = async () => {
     await axios
-      .get("http://localhost:5000/auth/loggedIn")
+      .get("http://localhost:7000/auth/loggedIn")
       .then((response) => {
         const data = response.data;
         setLoggedIn(data);
@@ -46,8 +47,9 @@ export const MyContextProvider = ({ children }) => {
   useEffect(() => {
     getLoggeIn();
     getData();
+ 
   }, []);
-
+ 
   // Step 4: Pass the state and methods that you want to share through the context to the value prop of the <Context.Provider> component.
   const value = {
     clickonprofile,
@@ -60,6 +62,8 @@ export const MyContextProvider = ({ children }) => {
     getData,
     setAllData,
     setSellData,
+    
+    
   };
 
   return (

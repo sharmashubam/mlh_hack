@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
-  const { getLoggeIn } = useContext(MyContext);
+  const { getLoggeIn ,loggedIn } = useContext(MyContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,16 +16,18 @@ function Login() {
         email,
         password,
       };
-      await axios.post("http://localhost:5000/auth/login", loginData);
+      await axios.post("http://localhost:7000/auth/login", loginData);
       await getLoggeIn();
       navigate("/");
     } catch (err) {
       console.log(err);
     }
   };
+  
 
   return (
-    <div className="bg-white lg:w-4/12 md:6/12 w-10/12 m-auto my-10 shadow-md">
+    <div className="bg-[url('./bg1.png')] h-[700px]   w-[68%] ml-[15%] rounded-md">
+    <div className="bg-white lg:w-4/12 md:6/12 w-10/12 m-auto my-10 shadow-md relative top-[10%] left-[10%]">
       <div className="py-8 px-8 rounded-xl">
         <h1 className="font-medium text-2xl mt-3 text-center">Login</h1>
         <form onSubmit={handleSubmit} className="mt-6">
@@ -60,17 +62,18 @@ function Login() {
             </div>
           </div>
 
-          <button className="block text-center text-white bg-gray-800 p-3 duration-300 rounded-sm hover:bg-black w-full">
+          <a href={`${loggedIn?'/home':""}`} className="block text-center text-white bg-gray-800 p-3 duration-300 rounded-sm hover:bg-black w-full">
             Login
-          </button>
+          </a>
         </form>
         <p className="mt-12 text-xs text-center font-light text-gray-400">
           Don't have an account?
-          <a href="#" className="text-black font-medium">
+          <a href="/" className="text-black font-medium">
             Create One
           </a>
         </p>
       </div>
+    </div>
     </div>
   );
 }

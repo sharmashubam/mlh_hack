@@ -9,11 +9,11 @@ function Main() {
   return (
     <div className="mt-10 grid gap-5 grid-cols-3 overflow-y-auto ml-20">
       {allData?.length && (
-        <div>
+        <div className="grid grid-cols-2 gap-16 mr-[-16%]">
           {allData.map((item) => {
             return (
               <div key={item.user}>
-                <Product item={item} />
+                <Product item={item}  className="mr-[15%]"/>
               </div>
             );
           })}
